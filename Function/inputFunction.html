@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input function</title>
+    <link rel="stylesheet" href="inputFunction.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <h1>Welcome to my website page</h1>
+    <h3>
+      <a
+        target="_blank"
+        class="link"
+        href="https://drive.google.com/file/d/19P2WFODh971OgXLRU5VHWwGp5RVdBki9/view?usp=sharing"
+        >לדף המשימות לחץ כאן</a
+      >
+    </h3>
+    <div class="continer">
+      <!-- משימת כיתה - התחלה -->
+      <script>
+        function Exponentiation() {
+          document.getElementById("id_Answer").innerHTML +=
+            document.getElementById("id_input").value ** 2;
+        }
+      </script>
+      <div class="HW-box">
+        <h3>Exponentiation</h3>
+        <input type="text" id="id_input" placeholder="Write a number..." />
+        <br />
+        <br />
+        <button onclick="Exponentiation()">click me</button>
+        <p id="id_Answer">the result is: <br /></p>
+      </div>
+      <!-- משימת כחתה - סוף -->
+
+      <!-- ש.ב תרגיל 1 - התחלה -->
+
+      <script>
+        function Welcome() {
+          document.getElementById("welocme_name").innerHTML =
+            "Welcome " +
+            document.getElementById("firstName_input").value +
+            " " +
+            document.getElementById("lastName_input").value +
+            " to the website";
+        }
+      </script>
+      <div class="HW-box">
+        <h3>First name</h3>
+        <input
+          type="text"
+          id="firstName_input"
+          placeholder="Entar your first name..."
+        />
+        <h3>last name</h3>
+        <input
+          type="text"
+          id="lastName_input"
+          placeholder="Entar your first name..."
+        /><br /><br />
+
+        <button onclick="Welcome()">Click Me</button>
+        <h3 id="welocme_name"></h3>
+      </div>
+      <!-- ש.ב תרגיל 1 - סוף -->
+
+      <!-- ש.ב תרגיל 2 - התחלה -->
+      <script>
+        function changeBC() {
+          document.getElementById("city").style.backgroundColor =
+            document.getElementById("city").value;
+        }
+      </script>
+
+      <div class="HW-box">
+        <h3>Choose your city</h3>
+        <select id="city" onchange="changeBC()">
+          <option value="yellow">Jerusalem</option>
+          <option value="blue">Tel Aviv</option>
+          <option value="green">Petah Tiqwa</option>
+          <option value="gray">Bnei Brak</option>
+        </select>
+        <br /><br />
+      </div>
+      <!-- ש.ב תרגיל 2 - סוף -->
+
+      <!-- ש.ב תרגיל 3 - התחלה -->
+      <script>
+        function password() {
+          if (
+            document.getElementById("input_password").value.length == 4 &&
+            document.getElementById("input_password").value % 2 == 1
+          ) {
+            document.getElementById("output").innerHTML =
+              "the password is correct";
+          } else {
+            document.getElementById("output").innerHTML =
+              "the password is incorrect";
+          }
+        }
+      </script>
+
+      <div class="HW-box">
+        <h3>Password</h3>
+        <input
+          type="text"
+          id="input_password"
+          placeholder="Entar your password..."
+        />
+        <button onclick="password()">Click Me</button>
+        <p id="output"></p>
+      </div>
+      <!-- ש.ב תרגיל 3 - סוף -->
+    </div>
+  </body>
+</html>

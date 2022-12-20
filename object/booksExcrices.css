@@ -1,0 +1,14 @@
+.continer {
+  display: flex;
+  justify-content: center;
+}
+
+.bookCss {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 8px 5px #888888;
+  text-align: center;
+  padding-top: 5px;
+  margin-right: 1%;
+}

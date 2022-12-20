@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      let names = ["David", "Arel", "Muhammad", "Daniel", "Miriam", "Rina"];
+      let addresses = [
+        "Peth tikva",
+        "Tel aviv",
+        "Beni berak",
+        "Ramat gan",
+        "Hifa",
+        "Holon",
+      ];
+      let ages = [25, 50, 30, 18, 25, 30];
+      console.log(names[3]);
+      console.log(addresses[3]);
+      console.log(ages[3]);
+      console.log("While");
+
+      let namesLen = names.length;
+      let i = 0;
+      while (i < namesLen) {
+        console.log(i + 1 + ". " + names[i]);
+        i++;
+      }
+      console.log("For");
+      for (i = 0; i < namesLen; i++) {
+        console.log(i + 1 + ". " + names[i]);
+      }
+      console.log("Adding two student");
+      names[6] = "Yair";
+      addresses.push("Jerusalem");
+      ages[6] = "21";
+      names.push("Moses");
+      addresses.push("Afula");
+      ages.push(26);
+
+      for (i = 0; i < names.length; i++) {
+        console.log(
+          i + 1 + ". " + names[i] + ", " + addresses[i] + ", " + ages[i]
+        );
+      }
+      console.log("Adding one student to the beginning of the list");
+      names.unshift("Moti");
+      addresses.unshift("Rishon Lezion");
+      ages.unshift("32");
+      for (i = 0; i < names.length; i++) {
+        console.log(
+          i + 1 + ". " + names[i] + ", " + addresses[i] + ", " + ages[i]
+        );
+      }
+      console.log("Delete two student");
+      names.splice(2, 2);
+      addresses.splice(2, 2);
+      ages.splice(2, 2);
+      for (i = 0; i < names.length; i++) {
+        console.log(
+          i + 1 + ". " + names[i] + ", " + addresses[i] + ", " + ages[i]
+        );
+      }
+
+      function listOnPage() {
+        for (i = 0; i < names.length; i++) {
+          document.getElementById("studentList").innerHTML +=
+            "<li>" +
+            (i + 1) +
+            ". " +
+            names[i] +
+            ", " +
+            addresses[i] +
+            ", " +
+            ages[i] +
+            "</li>";
+        }
+      }
+      function TableOnPage() {
+        for (i = 0; i < names.length; i++) {
+          document.getElementById("Table").innerHTML +=
+            "<div class='items'>" +
+            names[i] +
+            "</div>" +
+            "<div class='items'>" +
+            addresses[i] +
+            "</div>" +
+            "<div class='items'>" +
+            ages[i] +
+            "</div>";
+        }
+      }
+    </script>
+    <style>
+      #studentList {
+        list-style: none;
+      }
+      #Table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .items {
+        width: 30.3333%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+      }
+    </style>
+    <div>
+      <ul id="studentList"></ul>
+    </div>
+    <div>
+      <button onclick="listOnPage()">Click Me</button>
+    </div>
+
+    <div id="Table">
+      <div class="items">names</div>
+      <div class="items">Addresses</div>
+      <div class="items">Ages</div>
+    </div>
+
+    <button onclick="TableOnPage()">Click Me</button>
+  </body>
+</html>

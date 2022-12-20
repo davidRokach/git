@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neva's Array</title>
+  </head>
+  <body>
+    <script>
+      //כתיבת מערך
+      let arr = [23, 58, "hi", null, true, "gfbnghfn564y", 20];
+      let nums = [1, 2, 3, 4, 5, 6, 7, 8];
+      // שיטה נוספת לכתיבת מערך
+      let cars = new Array("Subaru", "BMW", "Fiat");
+
+      let user = ["Nave Gibli", 28, "nave@ngstudio.co.il"];
+      console.log(user[2]); //יציג את האימייל
+      console.log(user); //יציג את כל המערך
+
+      var x = 1;
+      console.log(user[x]); // יציג את הגיל - 28
+
+      var numFromNumsArray = nums[6];
+      console.log(numFromNumsArray);
+
+      // עריכת מערך
+      let studentsName = ["Shimi", "David", "Tarek", "Nave", "Zvi"];
+      console.log(studentsName);
+      studentsName[3] = "Assaf"; // החלפת השם בתא/אלמנט מס' 3
+      console.log(studentsName);
+
+      console.log(studentsName.length); // מציג את אורך המארך 5
+
+      //  הוספת אלמנטים לסוף המערך - דרך ראשונה
+      studentsName[5] = "Michal";
+      console.log(studentsName);
+      console.log(studentsName.length); // 6
+
+      //  הוספת אלמנטים לסוף המערך - דרך שניה
+      studentsName.push("Boruch");
+      studentsName.push("Daniel");
+      console.log(studentsName);
+
+      //הוספת אלמנטים לתחילת המערך
+      studentsName.unshift("Ezra", "Saed");
+      console.log(studentsName);
+      console.log(studentsName[1]);
+
+      //מחיקת ערך ממערך
+      studentsName.splice(1, 2);
+      console.log(studentsName);
+
+      let digits = [10, 20, 30, 40];
+      digits.splice(2, 1);
+      console.log(digits);
+      console.log(digits.length);
+
+      //איטרציה באמצעות לולאת for
+
+      var names = new Array("Ana", "Michal", "Tom");
+      var namesLen = names.length; // 3
+      for (i = 0; i < namesLen; i++) {
+        console.log(i + 1 + ". " + names[i]);
+      }
+
+      //איטרציה באמצעות לולאת while
+      var i = 0;
+      while (i < namesLen) {
+        console.log(i + 1 + ". " + names[i]);
+        i++;
+      }
+    </script>
+
+    <style>
+      #users {
+        list-style: none;
+      }
+    </style>
+
+    <div>
+      <ul id="users"></ul>
+    </div>
+
+    <script>
+      let usersNames = ["Nave", "Daniel", "Son", "Chani"];
+      let usersLen = usersNames.length;
+      let docGetElID = document.getElementById("users");
+      for (i = 0; i < usersLen; i++) {
+        let item = "<li>" + (i + 1) + ". " + usersNames[i] + "</li>";
+        docGetElID.innerHTML += item;
+      }
+    </script>
+  </body>
+</html>

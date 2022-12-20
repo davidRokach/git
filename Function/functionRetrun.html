@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function Retrun</title>
+  </head>
+  <body>
+    <script>
+      function lenName(name) {
+        let sum = name.length;
+        return sum;
+      }
+      console.log(lenName("david"));
+
+      function biggerNumber(num1, num2) {
+        if (num1 > num2) {
+          return num1;
+        } else if (num1 < num2) {
+          return num2;
+        } else {
+          return "The numbers are equales";
+        }
+      }
+      console.log(biggerNumber(30, 30));
+
+      let nums = [10, 20, 35, 5, 102];
+      nums = nums.map(function (num) {
+        let x = num ** 2;
+        return x;
+      });
+      console.log(nums);
+
+      let names = ["David", "Arel", "Muhammad", "Daniel", "Miriam"];
+
+      names = names.map(function (name) {
+        let x = name.length ** 2;
+        return x;
+      });
+      console.log(names);
+    </script>
+  </body>
+</html>

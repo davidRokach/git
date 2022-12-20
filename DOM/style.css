@@ -1,0 +1,19 @@
+quote {
+  cursor: pointer;
+}
+@keyframes glow-anim {
+  0% {
+    box-shadow: 0 0 red;
+  }
+  100% {
+    box-shadow: 0 0 10px 8px transparent;
+    border-width: 4px;
+  }
+}
+.danger {
+  border: 2px solid red;
+  border-radius: 50%;
+  animation: glow-anim 1s ease infinite;
+  width: 10px;
+  height: 10px;
+}

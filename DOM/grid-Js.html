@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/grid-js.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="continer">
+        <div class="grid">
+          <img
+            src="https://www.paneco.co.il/media/catalog/product/cache/723c292420af53b7186aedcaaff3fac4/_/1/_12_-_12_700.jpg"
+            alt=""
+          />
+          <h4>אברלור 12 שנים דאבל קאסט</h4>
+          <h3>179.00</h3>
+          <div button-cart>
+            <button
+              class="button"
+              id="Add-to-cart1"
+              onclick="cart1(179.00 + ' '+ 'שקל')"
+            >
+              הוסף לסל
+            </button>
+          </div>
+        </div>
+        <div class="grid">
+          <img
+            src="https://www.paneco.co.il/media/catalog/product/cache/723c292420af53b7186aedcaaff3fac4/0/0/0001599_-10-.jpg"
+            alt=""
+          />
+          <h4>גלנמורנג'י 10</h4>
+          <h3>159.00</h3>
+          <div button-cart>
+            <button
+              class="button"
+              id="Add-to-cart2"
+              onclick="cart2(159.00 + ' '+ 'שקל')"
+            >
+              הוסף לסל
+            </button>
+          </div>
+        </div>
+        <div class="grid">
+          <img
+            src="https://www.paneco.co.il/media/catalog/product/cache/723c292420af53b7186aedcaaff3fac4/0/0/0009127_-12-.jpeg"
+            alt=""
+          />
+          <h4>בלוויני 12 סינגל בארל</h4>
+          <h3>329.00</h3>
+          <div button-cart>
+            <button
+              class="button"
+              id="Add-to-cart3"
+              onclick="cart3(329.00 + ' '+ 'שקל')"
+            >
+              הוסף לסל
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function cart1(price) {
+        alert(" המוצר התווסף לסל במחיר של " + " " + price);
+        document.getElementById("Add-to-cart1").innerHTML = "מוצר 1 בסל ";
+        document.getElementById("Add-to-cart1").style.backgroundColor = "white";
+      }
+      function cart2(price) {
+        alert(" המוצר התווסף לסל במחיר של " + " " + price);
+        document.getElementById("Add-to-cart2").innerHTML = "מוצר 1 בסל ";
+        document.getElementById("Add-to-cart2").style.backgroundColor = "white";
+      }
+      function cart3(price) {
+        alert(" המוצר התווסף לסל במחיר של " + " " + price);
+        document.getElementById("Add-to-cart3").innerHTML = "מוצר 1 בסל ";
+        document.getElementById("Add-to-cart3").style.backgroundColor = "white";
+      }
+    </script>
+  </body>
+</html>

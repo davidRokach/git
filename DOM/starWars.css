@@ -1,0 +1,22 @@
+img {
+  width: 8%;
+  display: none;
+  border: 1px solid white;
+  border-radius: 40%;
+}
+li {
+  position: relative;
+  padding: 55px 0;
+  list-style-type: none;
+  border-bottom: 1px solid black;
+}
+
+p {
+  cursor: pointer;
+}
+.imgHover {
+  display: block;
+  position: absolute;
+  left: 10%;
+  top: 0;
+}

@@ -1,0 +1,70 @@
+.inputButton {
+  display: flex;
+  justify-content: center;
+}
+.output {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  padding-right: 5px;
+}
+input {
+  padding: 20px 40px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 2px #888888;
+  font-size: 20px;
+}
+button {
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  color: green;
+  margin-bottom: 25px;
+  padding: 20px;
+  font-size: 20px;
+  box-shadow: 1px 2px #888888;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+p {
+  flex: 60%;
+  font-size: 30px;
+  margin: 0px 20.5% 0 1.5%;
+  border: 1px solid black;
+  border-radius: 18px;
+  padding: 5px 25px;
+  box-shadow: 1.5px 3px #888888;
+}
+.remove {
+  flex: 8%;
+  cursor: pointer;
+  transition: scale 0.5s;
+  text-align: end;
+}
+.remove:hover {
+  scale: 1.1;
+}
+span {
+  flex: 2%;
+  text-align: end;
+  cursor: pointer;
+  transition: scale 0.7s;
+}
+span:hover {
+  scale: 1.4;
+}
+.sapnClick {
+  text-decoration: line-through !important;
+}
+ul {
+  margin: 0 !important;
+  padding: 10px;
+}
