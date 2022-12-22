@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+main {
+  min-height: 87vh;
+}
+.logo {
+  width: 9vh;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+.input-search {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 30px;
+}

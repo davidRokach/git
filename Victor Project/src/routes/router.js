@@ -1,6 +1,7 @@
 import {
   ABOUT_PAGE,
   ADD_PIC_PAGE,
+  error_Page,
   HOME_PAGE,
   LOGIN_PAGE,
 } from "../services/domService.js";
@@ -11,6 +12,7 @@ export const onChangePage = (page) => {
   ABOUT_PAGE.className = "d-none";
   ADD_PIC_PAGE.className = "d-none";
   LOGIN_PAGE.className = "d-none";
+  error_Page.className = "d-none";
 
   switch (page) {
     case PAGES.HOME:
@@ -24,6 +26,9 @@ export const onChangePage = (page) => {
       break;
     case PAGES.LOGIN:
       LOGIN_PAGE.className = "d-block";
+      break;
+    default:
+      error_Page.className = "d-block";
       break;
   }
 };

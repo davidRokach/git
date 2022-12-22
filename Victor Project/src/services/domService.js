@@ -11,7 +11,10 @@ export const HOME_PAGE = document.querySelector("#home-page");
 export const ABOUT_PAGE = document.querySelector("#about-page");
 export const LOGIN_PAGE = document.querySelector("#login-page");
 export const ADD_PIC_PAGE = document.querySelector("#add-pic-page");
+export const error_Page = document.querySelector("#error-404-page");
 
 //#endregion
 
-export const RETURE_HOME_PAGE_LINK = querySelector("");
+export const RETURE_HOME_PAGE_LINK = document.querySelector(
+  "#return-to-home-page-link"
+);
