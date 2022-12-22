@@ -34,6 +34,7 @@
         aria-label="Seventh navbar example"
       >
         <div class="container-fluid">
+          <!-- לוגו -->
           <span class="navbar-brand cursor" id="home-link">
             <img class="logo" src="./assets/images/icone.ico" alt="logo"
           /></span>
@@ -69,7 +70,7 @@
                       name=""
                       id=""
                       aria-describedby="helpId"
-                      placeholder="Search for a movie..."
+                      placeholder="Search for a movie...  "
                     />
                     <small id="helpId" class="form-text text-muted"
                       ><i class="bi bi-search"></i
@@ -82,7 +83,7 @@
                 >
               </li>
               <li class="nav-item">
-                <span class="nav-link active cursor" id="login-page-link"
+                <span class="nav-link active cursor" id="singup-page-link"
                   >singup</span
                 >
               </li>
@@ -91,5 +92,101 @@
         </div>
       </nav>
     </header>
+
+    <main>
+      <!-- דף הבית -->
+      <div id="home-page" class="d-block">
+        <!-- הכותרת של דף הבית -->
+        <div class="center mt-4">
+          <div class="col-12 col-md-10 col-xl-8">
+            <h1 id="home-page-title" class="text-center display-4">
+              Welcome to CinemaRating
+            </h1>
+            <h2 id="home-page-subtitle" class="fs-5">
+              movie rating site <br />
+              Here you can see movie rating and rate yourself
+            </h2>
+            <hr />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <ul class="nav justify-content-center categoriesUl">
+              <h1 class="text-center display-4">Selecting movie categories:</h1>
+              <li class="nav-item">
+                <span class="nav-link active cursor" id="movie-link">all</span>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link active cursor">highly rated</span>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link active cursor">action </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- דף אודות -->
+      <div id="about-page" class="d-none">
+        <!-- הכותרת של דף אודות -->
+        <div class="center mt-4">
+          <div class="col-12 col-md-10 col-xl-8">
+            <h1 id="about-page-title" class="text-center display-4">
+              ABOUT PAGE
+            </h1>
+            <h2 id="about-page-subtitle" class="fs-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              dolor vitae cupiditate pariatur unde deserunt sunt non aperiam
+              aliquam, officia esse aut consectetur exercitationem ex neque ad
+              placeat, a cumque?
+            </h2>
+            <hr />
+          </div>
+        </div>
+      </div>
+
+      <!-- דף התחברות -->
+      <div id="login-page" class="d-none">
+        <!-- הכותרת של דף התחברות -->
+        <div class="center mt-4">
+          <div class="col-12 col-md-10 col-xl-8">
+            <h1 id="login-page-title" class="text-center display-4">
+              LOGIN PAGE
+            </h1>
+            <h2 id="login-page-subtitle" class="fs-5">Here you can pictures</h2>
+            <hr />
+          </div>
+        </div>
+      </div>
+
+      <!-- דף הרשמה -->
+      <div id="singup-page" class="d-none">
+        <!-- הכותרת של דף הרשמה -->
+        <div class="center mt-4">
+          <div class="col-12 col-md-10 col-xl-8">
+            <h1 id="singup-page-title" class="text-center display-4">
+              SINGUP PAGE
+            </h1>
+            <h2 id="singup-page-subtitle" class="fs-5">
+              Here you can pictures
+            </h2>
+            <hr />
+          </div>
+        </div>
+      </div>
+
+      <!-- דף סרטים -->
+      <div id="movie-page" class="d-none">
+        <!-- הכותרת של דף סרטים -->
+        <div class="center mt-4">
+          <div class="col-12 col-md-10 col-xl-8">
+            <h1 id="movie-page-title" class="text-center display-4">
+              MOVIE PAGE
+            </h1>
+            <h2 id="movie-page-subtitle" class="fs-5">Here you can MOVIES</h2>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

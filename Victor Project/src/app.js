@@ -4,9 +4,26 @@ import {
   HOME_PAGE_LINK,
   LOGIN_PAGE_LINK,
   RETURE_HOME_PAGE_LINK,
+  slider_next_btn,
+  slider_prev_btn,
 } from "./services/domService.js";
 import PAGES from "./models/pageModel.js";
 import { onChangePage } from "./routes/router.js";
+import { renderSlider as render } from "./services/renderSlider.js";
+import { setCounter } from "./services/picService.js";
+import Initial_data from "./initialData/initialData.js";
+
+//#region
+let pictures = [Initial_data.pictures];
+let counter = 0;
+//#endregion
+
+render(pictures);
+
+const onChangeSliderPic = (controler) => {
+  counter = setCounter(pictures, counter, controler);
+  render(pictures, counter);
+};
 
 //#region האזנה לאירועים
 HOME_PAGE_LINK.addEventListener("click", () => onChangePage(PAGES.HOME));
@@ -16,5 +33,8 @@ ADD_PIC_PAGE_LINK.addEventListener("click", () => onChangePage(PAGES.ADD_PIC));
 RETURE_HOME_PAGE_LINK.addEventListener("click", () =>
   onChangePage(PAGES.ERROR_404)
 );
+
+slider_next_btn.addEventListener("click", () => onChangeSliderPic("next"));
+slider_prev_btn.addEventListener("click", () => onChangeSliderPic("prev"));
 
 //#endregion
