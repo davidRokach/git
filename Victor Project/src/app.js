@@ -11,15 +11,17 @@ import PAGES from "./models/pageModel.js";
 import { onChangePage } from "./routes/router.js";
 import { renderSlider as render } from "./services/renderSlider.js";
 import { setCounter } from "./services/picService.js";
-import Initial_data from "./initialData/initialData.js";
+import Initialdata from "./initialData/initialData.js";
 
-//#region
-let pictures = [Initial_data.pictures];
+//#region הגדרת משתנים גלובליים
+let { pictures } = Initialdata();
 let counter = 0;
 //#endregion
 
+// אתחול הצגה ראשונית
 render(pictures);
 
+//slider logic
 const onChangeSliderPic = (controler) => {
   counter = setCounter(pictures, counter, controler);
   render(pictures, counter);
@@ -34,7 +36,9 @@ RETURE_HOME_PAGE_LINK.addEventListener("click", () =>
   onChangePage(PAGES.ERROR_404)
 );
 
-slider_next_btn.addEventListener("click", () => onChangeSliderPic("next"));
+slider_next_btn.addEventListener("click", () => {
+  onChangeSliderPic("next");
+});
 slider_prev_btn.addEventListener("click", () => onChangeSliderPic("prev"));
 
 //#endregion
