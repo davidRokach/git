@@ -10,8 +10,8 @@ class Picture {
   likes = [];
 
   constructor(Picture, array = []) {
-    const { url, cerdit, alt, price } = Picture;
-    this.#createdBy = cerdit;
+    const { url, credits, alt, price } = Picture;
+    this.#createdBy = credits;
     this.url = url;
     this.alt = alt;
     this.#price = price;
@@ -28,10 +28,10 @@ class Picture {
   get _id() {
     return this.#id;
   }
-  get cerdit() {
+  get credits() {
     return this.#createdBy;
   }
-  set cerdit(newCredit) {
+  set credits(newCredit) {
     this.#createdBy = newCredit;
   }
   get price() {

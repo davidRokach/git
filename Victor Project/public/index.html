@@ -63,6 +63,11 @@
                 >
               </li>
               <li class="nav-item">
+                <span class="nav-link active cursor" id="signUp-page-link"
+                  >Sign Up</span
+                >
+              </li>
+              <li class="nav-item">
                 <span class="nav-link active cursor" id="login-page-link"
                   >Login</span
                 >
@@ -131,9 +136,177 @@
             <h1 id="login-page-title" class="text-center display-4">
               LOGIN PAGE
             </h1>
-            <h2 id="login-page-subtitle" class="fs-5">Here you can pictures</h2>
+            <h2 id="login-page-subtitle" class="fs-5">Here you can to login</h2>
             <hr />
           </div>
+        </div>
+      </div>
+      <!-- דף הרשמה -->
+      <div id="signUp-page" class="d-none">
+        <!-- הכותרת של דף הרשמה -->
+        <div class="center mt-4">
+          <div class="col-12 col-md-10 col-xl-8">
+            <h1 id="signUp-page-title" class="text-center display-4">
+              Sign Up
+            </h1>
+            <h2 id="signUp-page-subtitle" class="fs-5">
+              Here you can to sign Up
+            </h2>
+            <hr />
+          </div>
+        </div>
+        <div class="center">
+          <form class="col-12 col-md-10 col-xl-8 border p-2 rounded row">
+            <div class="col-6">
+              <label for="firstName-field">First Name</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="first-Name"
+                id="firstName-field"
+                minlength="2"
+              />
+              <span id="firstName-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-6">
+              <label for="LastName-field">Last Name</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="Last-Name"
+                id="LastName-field"
+                minlength="2"
+              />
+              <span id="LastName-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-6">
+              <label for="Phone-field">Phone</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="Phone"
+                id="Phone-field"
+                minlength="2"
+              />
+              <span id="Phone-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-6">
+              <label for="Email-field">Email</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="Email"
+                id="Email-field"
+                minlength="2"
+              />
+              <span id="Email-error-span" class="text-danger"></span>
+            </div>
+            <h3 class="fs-5">Address</h3>
+            <hr />
+            <div class="col-4">
+              <label for="State-field">State</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="State"
+                id="State-field"
+                minlength="2"
+              />
+              <span id="State-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+              <label for="Country-field">Country</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="Country"
+                id="Country-field"
+                minlength="2"
+              />
+              <span id="Country-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+              <label for="City-field">City</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="City"
+                id="City-field"
+                minlength="2"
+              />
+              <span id="City-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+              <label for="Street-field">Street</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="Street"
+                id="Street-field"
+                minlength="2"
+              />
+              <span id="Street-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+              <label for="House-number-field">House number</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="House-number"
+                id="House-number-field"
+                minlength="2"
+              />
+              <span id="House-number-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+              <label for="Zip-field">Zip</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="Zip"
+                id="Zip-field"
+                minlength="2"
+              />
+              <span id="Zip-error-span" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="col-10">
+              <label for="Password-field">Password</label>
+              <input
+                type="password"
+                class="form-control mb-2"
+                name="Password"
+                id="Password-field"
+                minlength="2"
+              />
+              <span id="Password-error-span" class="text-danger"></span>
+            </div>
+            <div class="col-2 d-flex align-items-center justify-content-center">
+              <label for="Business-field">Business</label>
+              <input
+                type="checkbox"
+                class="form-check-input mt-0 ms-2"
+                name="Business"
+                id="Business-field"
+                minlength="2"
+                value=""
+              />
+              <span id="Business-error-span" class="text-danger"></span>
+            </div>
+            <input
+              type="buttone"
+              id="submit-sighUp-btn"
+              value="Submit"
+              class="btn btn-primary col-12 mb-2"
+              disabled
+            />
+            <input
+              type="buttone"
+              id="cancel-sighUp-btn"
+              value="Cancel"
+              class="btn btn-outline-danger col-12 mb-2"
+            />
+          </form>
         </div>
       </div>
 
@@ -146,10 +319,72 @@
               ADD PIC PAGE
             </h1>
             <h2 id="add-pic-page-subtitle" class="fs-5">
-              Here you can pictures
+              Here you can add pictures
             </h2>
             <hr />
           </div>
+        </div>
+        <div class="center">
+          <form class="col-12 col-md-10 col-xl-8 border p-2 rounded">
+            <div>
+              <label for="url-field">url</label>
+              <input
+                type="url"
+                class="form-control mb-2"
+                name="url"
+                id="url-field"
+                minlength="2"
+              />
+              <span id="url-error-span" class="text-danger"></span>
+            </div>
+            <div>
+              <label for="alt-field">alt</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="alt"
+                id="alt-field"
+                minlength="2"
+              />
+              <span id="alt-error-span" class="text-danger"></span>
+            </div>
+            <div>
+              <label for="credit-field">cerdit</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                name="credit"
+                id="credit-field"
+                minlength="2"
+              />
+              <span id="credit-error-span" class="text-danger"></span>
+            </div>
+            <div>
+              <label for="price-field">price</label>
+              <input
+                type="number"
+                class="form-control mb-2"
+                name="price"
+                id="price-field"
+                minlength="2"
+              />
+              <span id="price-error-span" class="text-danger"></span>
+            </div>
+
+            <input
+              type="buttone"
+              id="submit-create-pic-btn"
+              value="Submit"
+              class="btn btn-primary col-12 mb-2"
+              disabled
+            />
+            <input
+              type="buttone"
+              id="cancel-create-pic-btn"
+              value="Cancel"
+              class="btn btn-outline-danger col-12 mb-2"
+            />
+          </form>
         </div>
       </div>
 

@@ -1,61 +1,55 @@
-import { handleSubmitNewPic } from "../app.js";
 import PAGES from "../models/pageModel.js";
-import Picture from "../models/pictureModel.js";
+import Picture from "../models/PictureModel.js";
 import { onChangePage } from "../routes/router.js";
 import {
-  ALT_CREATE_PIC,
-  ALT_ERROR_PIC,
+  ALT_CREATE_PIC_ERROR,
+  ALT_CREATE_PIC_FIELD,
   CANCEL_BTN,
-  CREDIT_CREATE_PIC,
-  CREDIT_ERROR_PIC,
-  PRICE_CREATE_PIC,
-  PRICE_ERROR_PIC,
+  CREDIT_CREATE_PIC_ERROR,
+  CREDIT_CREATE_PIC_FIELD,
+  PRICE_CREATE_PIC_ERROR,
+  PRICE_CREATE_PIC_FIELD,
   SUBMIT_CREATE_PIC_BTN,
-  URL_CREATE_PIC,
-  URL_ERROR_PIC,
+  URL_CREATE_PIC_ERROR,
+  URL_CREATE_PIC_FIELD,
 } from "./domService.js";
 import useForm from "./formService.js";
 
-//#region Navigation in the photo menu
-export const setCounter = (array, conter, controller = " ") => {
+export const setCounter = (array, counter, controller = "") => {
   let newCounter;
   if (controller === "next") {
-    newCounter = conter < array.length - 1 ? conter + 1 : 0;
+    newCounter = counter < array.length - 1 ? counter + 1 : 0;
     return newCounter;
   }
+
   if (controller === "prev") {
-    newCounter = conter > 0 ? conter - 1 : array.length - 1;
+    newCounter = counter > 0 ? counter - 1 : array.length - 1;
     return newCounter;
   }
+
   return 0;
 };
-//#endregion
 
 // craete new pic
 
 export const handleCreatePic = () => {
   // הגענו לדף
-  onChangePage(PAGES.ADD_PIC);
+  onChangePage(PAGES.CREATE_PIC);
 
   // להרשם לאירועי הזנת המידע בשדות
   createPicFromFieldsListeners();
 
-  const cancelEH = () => {
-    const conf = confirm("Are you sure you want to cancel?");
-    if (conf) handleCancelCreatePic();
-  };
-
-  CANCEL_BTN.removeEventListener("click", cancelEH);
-  CANCEL_BTN.addEventListener("click", cancelEH);
-
-  SUBMIT_CREATE_PIC_BTN.removeEventListener("click", handleSubmitNewPic);
-  SUBMIT_CREATE_PIC_BTN.addEventListener("click", handleSubmitNewPic);
+  CANCEL_BTN.addEventListener("click", () => {
+    const con = confirm("Are you sure you whant to cancel?");
+    if (!con) return;
+    handleCancelCreatePic();
+  });
 };
 
 export const createPicFromFieldsListeners = () => {
   const { onChangeInputField } = useForm();
   const schema = ["url", "price", "alt", "credit"];
-  URL_CREATE_PIC.addEventListener("input", (e) => {
+  URL_CREATE_PIC_FIELD.addEventListener("input", (e) => {
     const validation = {
       regex: /^http[s]?\:\/\/.{1,}.(jpg|png|jpeg)$/g,
       min: 10,
@@ -64,14 +58,14 @@ export const createPicFromFieldsListeners = () => {
 
     const element = {
       input: e.target,
-      errorSpan: URL_ERROR_PIC,
+      errorSpan: URL_CREATE_PIC_ERROR,
       validation,
     };
 
     onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
   });
 
-  PRICE_CREATE_PIC.addEventListener("input", (e) => {
+  PRICE_CREATE_PIC_FIELD.addEventListener("input", (e) => {
     const validation = {
       regex: /^\d+$/g,
       numMin: 100,
@@ -79,13 +73,13 @@ export const createPicFromFieldsListeners = () => {
 
     const element = {
       input: e.target,
-      errorSpan: PRICE_ERROR_PIC,
+      errorSpan: PRICE_CREATE_PIC_ERROR,
       validation,
     };
     onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
   });
 
-  ALT_CREATE_PIC.addEventListener("input", (e) => {
+  ALT_CREATE_PIC_FIELD.addEventListener("input", (e) => {
     const validation = {
       regex: /^\w+$/g,
       min: 1,
@@ -93,13 +87,13 @@ export const createPicFromFieldsListeners = () => {
 
     const element = {
       input: e.target,
-      errorSpan: ALT_ERROR_PIC,
+      errorSpan: ALT_CREATE_PIC_ERROR,
       validation,
     };
     onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
   });
 
-  CREDIT_CREATE_PIC.addEventListener("input", (e) => {
+  CREDIT_CREATE_PIC_FIELD.addEventListener("input", (e) => {
     const validation = {
       regex: /^\w+$/g,
       min: 1,
@@ -107,7 +101,7 @@ export const createPicFromFieldsListeners = () => {
 
     const element = {
       input: e.target,
-      errorSpan: CREDIT_ERROR_PIC,
+      errorSpan: CREDIT_CREATE_PIC_ERROR,
       validation,
     };
     onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
@@ -117,16 +111,16 @@ export const createPicFromFieldsListeners = () => {
 export const handleCancelCreatePic = () => {
   const { onClearFormFields } = useForm();
   const field = [
-    URL_CREATE_PIC,
-    ALT_CREATE_PIC,
-    CREDIT_CREATE_PIC,
-    PRICE_CREATE_PIC,
+    URL_CREATE_PIC_ERROR,
+    ALT_CREATE_PIC_FIELD,
+    CREDIT_CREATE_PIC_FIELD,
+    PRICE_CREATE_PIC_FIELD,
   ];
   const errorSpans = [
-    URL_ERROR_PIC,
-    ALT_ERROR_PIC,
-    CREDIT_ERROR_PIC,
-    PRICE_ERROR_PIC,
+    URL_CREATE_PIC_ERROR,
+    ALT_CREATE_PIC_ERROR,
+    CREDIT_CREATE_PIC_ERROR,
+    PRICE_CREATE_PIC_ERROR,
   ];
 
   onClearFormFields(SUBMIT_CREATE_PIC_BTN, field, errorSpans);
@@ -138,10 +132,10 @@ export const onCreateNewPic = (pictures) => {
     let newArray = [...pictures];
     const pic = new Picture(
       {
-        url: URL_CREATE_PIC.value,
-        alt: ALT_CREATE_PIC.value,
-        credits: CREDIT_CREATE_PIC.value,
-        price: PRICE_CREATE_PIC.value,
+        url: URL_CREATE_PIC_FIELD.value,
+        alt: ALT_CREATE_PIC_FIELD.value,
+        credit: CREDIT_CREATE_PIC_FIELD.value,
+        price: PRICE_CREATE_PIC_FIELD.value,
       },
       newArray
     );
