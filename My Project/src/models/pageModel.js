@@ -4,7 +4,8 @@ const PAGES = {
   singup: "singup-page",
   LOGIN: "login-page",
   ERROR_404: "home-page",
-  movie: "movie_page",
+  add_movie: "add-movie-page",
+  ERROR_404: "home-page",
 };
 
 export default PAGES;

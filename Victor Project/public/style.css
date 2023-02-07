@@ -17,3 +17,7 @@
 main {
   min-height: 87vh;
 }
+
+img {
+  width: 100%;
+}

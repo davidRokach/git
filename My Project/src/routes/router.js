@@ -4,7 +4,8 @@ import {
   home_page,
   login_page,
   singup_page,
-  movie_page,
+  error_page,
+  add_movie_page,
 } from "../services/domService.js";
 
 export const onClickPage = (page) => {
@@ -12,7 +13,9 @@ export const onClickPage = (page) => {
   about_page.className = "d-none";
   login_page.className = "d-none";
   singup_page.className = "d-none";
-  movie_page.className = "d-none";
+  error_page.className = "d-none";
+  add_movie_page.className = "d-none";
+
   switch (page) {
     case PAGES.HOME:
       home_page.className = "d-block";
@@ -26,11 +29,12 @@ export const onClickPage = (page) => {
     case PAGES.singup:
       singup_page.className = "d-block";
       break;
-    case PAGES.movie:
-      movie_page.className = "d-block";
+    case PAGES.add_movie:
+      add_movie_page.className = "d-block";
       break;
 
     default:
+      error_page.className = "d-block";
       break;
   }
 };

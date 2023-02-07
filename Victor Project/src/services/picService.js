@@ -15,6 +15,7 @@ import {
   URL_ERROR_PIC,
 } from "./domService.js";
 import useForm from "./formService.js";
+import { setItemInLocalStorage } from "./localStorageService.js";
 
 //#region Navigation in the photo menu
 export const setCounter = (array, conter, controller = " ") => {
@@ -147,6 +148,7 @@ export const onCreateNewPic = (pictures) => {
     );
     newArray.push(pic);
 
+    setItemInLocalStorage("pictures", JSON.stringify(newArray));
     return newArray;
   } catch (e) {
     console.log(e.massage);

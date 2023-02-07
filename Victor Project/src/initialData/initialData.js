@@ -1,5 +1,10 @@
 import Picture from "../models/pictureModel.js";
 import User from "../models/userModel.js";
+import {
+  clearFromLocalStorage,
+  getItemFromLocalStorage,
+  setItemInLocalStorage,
+} from "../services/localStorageService.js";
 
 const Initialdata = () => {
   const data = {
@@ -13,13 +18,13 @@ const Initialdata = () => {
       {
         url: "https://cdn.pixabay.com/photo/2021/12/21/08/29/owl-6884773_960_720.jpg",
         alt: "owl",
-        credits: "Jessica Rabbit",
+        credit: "Jessica Rabbit",
         price: 5_000,
       },
       {
         url: "https://cdn.pixabay.com/photo/2022/02/26/07/06/butterfly-7035308_960_720.jpg",
         alt: "butterfly",
-        credits: "Tyra Banks",
+        credit: "Tyra Banks",
         price: 500,
       },
     ],
@@ -74,9 +79,19 @@ const Initialdata = () => {
     ],
   };
 
-  const pictures = data.pictures.map((pic) => new Picture(pic, data.pictures));
+  if (!getItemFromLocalStorage("pictures")) {
+    setItemInLocalStorage("pictures", JSON.stringify(data.pictures));
+  }
+  const pictures = JSON.parse(getItemFromLocalStorage("pictures")).map(
+    (pic) => new Picture(pic, data.pictures)
+  );
+  // pictures.map((pic) => {
+  //   setItemInLocalStorage(`pic${pic._id}`, JSON.stringify(pic));
+  // });
+
   const users = data.users.map((user) => new User(user));
-  return { pictures, users };
+
+  return { users, pictures };
 };
 
 export default Initialdata;

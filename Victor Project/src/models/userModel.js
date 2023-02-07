@@ -60,25 +60,25 @@ class User {
   get _id() {
     return this.#id;
   }
-  get _name() {
+  get name() {
     return this.#name;
   }
-  get _phone() {
+  get phone() {
     return this.#phone;
   }
-  get _email() {
+  get email() {
     return this.#email;
   }
-  get _password() {
+  get password() {
     return this.#password;
   }
-  get _createdAt() {
+  get createdAt() {
     return this.#createdAt;
   }
-  get _isAdmin() {
+  get isAdmin() {
     return this.#isAdmin;
   }
-  get _isBusiness() {
+  get isBusiness() {
     return this.#isBusiness;
   }
   //#endregion

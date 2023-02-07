@@ -2,9 +2,9 @@ import PAGES from "./models/pageModel.js";
 import { onClickPage } from "./routes/router.js";
 import {
   about_link,
+  add_movie_link,
   home_link,
   Login_link,
-  movie_link,
   singup_link,
 } from "./services/domService.js";
 
@@ -20,6 +20,6 @@ Login_link.addEventListener("click", () => {
 singup_link.addEventListener("click", () => {
   onClickPage(PAGES.singup);
 });
-movie_link.addEventListener("click", () => {
-  onClickPage(PAGES.movie);
+add_movie_link.addEventListener("click", () => {
+  onClickPage(PAGES.add_movie);
 });
